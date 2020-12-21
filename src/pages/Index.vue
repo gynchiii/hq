@@ -1,23 +1,20 @@
 <template>
-  <q-page class="flex containerr" style="max-width: 1920px">
-    <h2 class="text-teal-4 large-screen-only" style="padding-left: 20%">
-      QUER GANHAR CYBERPUNK 2077?
+  <q-page class=" containerr" style="max-width: 1920px">
+    <h2 class="text-teal-4 large-screen-only text-center q-pa-xl">
+     RESGATE O SEU PRÊMIO 
     </h2>
-    <div class="absolute-center text-h2 text-teal-4 large-screen-only" style="padding-top: 300px" id="demo"></div>
-    <div class="absolute-center text-h5 text-red-5 small-screen-only" style="padding-top: 250px" id="demo1"></div>
-    <h4 class="text-dark text-bold small-screen-only" style="padding-left: 10%">
-      QUER GANHAR CYBERPUNK 2077?
-    </h4>
-    <br />
+    <h5 class="text-dark text-bold small-screen-only" style="padding-left: 10%">
+     RESGATE O SEU PRÊMIO 
+    </h5>
     <div class="q-gutter-y-md absolute-center column" style="width: 320px">
-      <form class="contact-form" @submit.prevent="sendEmail">
+      <form class="contact-form text-purple" @submit.prevent="sendEmail">
 
         <q-input
           ref="name"
           filled
           name="user_name"
           type="text"
-          bg-color="yellow"
+          bg-color="grey text-dark"
           v-model="name"
           label="Nome *"
           lazy-rules
@@ -33,7 +30,7 @@
           v-model="email"
           type="email"
           name="user_email"
-          bg-color="yellow"
+          bg-color="grey text-dark"
           label="Email *"
           lazy-rules
           standout
@@ -43,19 +40,21 @@
             <q-icon name="mail" />
           </template>
         </q-input>
-   <q-btn label="Enviar" type="submit" color="teal-5" @click="seamless = true"/>
+         <q-toggle class="text-black text-h6" v-model="accept" label="Habilito a Elements entrar em contato" />
+   <q-btn label="Enviar" type="submit" color="white text-black" @click="seamless = true"/>
       </form>
         <q-dialog v-model="seamless" seamless position="bottom">
       <q-card class="bg-teal-5" style="width: 350px">
         <q-card-section class="row items-center no-wrap">
           <div>
             <div class="textt text-bold text-h5">Tudo certo?</div>
-            <div class="text-yellow text-h7">Podemos lhe registrar no sorteio?</div>
+            <div class="text-yellow text-h7">Clique pra receber seu HQ</div>
           </div>
 
           <q-space />
-
-          <q-btn fab round icon="done_outline" class="text-yellow" color="black" to="/Thx" />
+          <form target="_blank" action="https://drive.google.com/file/d/1aCc49bOMDwdvAxwnfmk0fodnUsqCc1Jk/view?usp=sharing">
+          <q-btn fab round icon="done_outline" class="text-yellow" color="black" to="https://drive.google.com/file/d/1aCc49bOMDwdvAxwnfmk0fodnUsqCc1Jk/view?usp=sharing" />
+          </form>
         </q-card-section>
       </q-card>
     </q-dialog>
@@ -84,9 +83,40 @@ export default {
       dense: false,
       name: null,
       email: null,
-      accept: true,
+      accept: false,
       seamless: false
     };
+  },
+   methods: {
+    onSubmit () {
+      this.$refs.name.validate()
+      this.$refs.age.validate()
+
+      if (this.$refs.name.hasError || this.$refs.age.hasError) {
+        this.formHasError = true
+      }
+      else if (this.accept !== true) {
+        this.$q.notify({
+          color: 'negative',
+          message: 'Voce não quer nossas mensagens ? -_-'
+        })
+      }
+      else {
+        this.$q.notify({
+          icon: 'done',
+          color: 'positive',
+          message: 'Foi...'
+        })
+      }
+    },
+
+    onReset () {
+      this.name = null
+      this.age = null
+
+      this.$refs.name.resetValidation()
+      this.$refs.age.resetValidation()
+    }
   }
 }
   var countDownDate = new Date("Dec 11, 2020 12:00:00").getTime();
@@ -124,9 +154,8 @@ export default {
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
 .containerr {
-  background-image: url("https://db4sgowjqfwig.cloudfront.net/campaigns/205381/assets/990904/unnamed.gif?1564032863");
-  background-position: 55%;
-  background-size: 170vh;
+  background-image: url("https://desafio.elementsgaming.com.br/wp-content/uploads/2020/07/egdesafio1-scaled.jpg");
+  background-size: 200vh;
   font-family: "Audiowide", cursive;
 }
 
