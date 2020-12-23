@@ -3,7 +3,7 @@
     <h2 class="text-teal-4 large-screen-only text-center q-pa-xl">
      RESGATE O SEU PRÊMIO 
     </h2>
-    <h5 class="text-dark text-bold small-screen-only" style="padding-left: 10%">
+    <h5 class="text-dark text-bold text-center q-pa-xl small-screen-only" >
      RESGATE O SEU PRÊMIO 
     </h5>
     <div class="q-gutter-y-md absolute-center column" style="width: 320px">
@@ -67,7 +67,7 @@ import emailjs from 'emailjs-com';
 export default {
    methods: {
     sendEmail: (e) => {
-      emailjs.sendForm('service_hj1he6p', 'template_g6f5gi9', e.target, 'user_F2eJn3d0x4QIDRMUqqymD')
+      emailjs.sendForm('service_ak32cfk', 'template_s61d9cq', e.target, 'user_WsYwkDH83qgP2HaxA9BrP')
         .then((result) => {
             console.log('SUCCESS!', result.status, result.text);
         }, (error) => {
