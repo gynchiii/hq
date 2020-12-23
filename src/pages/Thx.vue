@@ -1,57 +1,75 @@
 <template>
   <div class="fullscreen textt containerr text-white text-center q-pa-md flex flex-center">
+   <particles-bg type="lines" :bg="true" />
     <div>
-      <div class="text-yellow-5 large-screen-only" style="font-size: 20vh">
-        OBRIGADO POR PARTICIPAR.
+      <div class="text-purple-7 large-screen-only" style="font-size: 20vh">
+        O SÁBIO SABE QUE NÃO SABE.
       </div>
-      <div class="small-screen-only text-yellow-5" style="font-size: 7vh">
-        OBRIGADO POR PARTICIPAR.
+      <div class="small-screen-only text-purple-7" style="font-size: 7vh">
+        O SÁBIO SABE QUE NÃO SABE.
       </div>
       <div class="large-screen-only text-h2 text-white" style="opacity:.4">
-       Boa sorte...
+       É apenas o começo...
       </div>
       <div class="text-h4 text-white small-screen-only" style="opacity:.4">
-       Boa sorte...
+       É apenas o começo...
       </div>
     </div>
     <q-dialog class="textt" v-model="card">
-      <q-card class="textt bg-yellow-5">
-        <q-btn color="teal-6" flat icon="close" v-close-popup />
-        <q-timeline class="bg-yellow-5" :layout="layout" color="teal-5">
-          <q-timeline-entry class="text-teal-6" heading>
-            SE CHEGOU ATÉ AQUI...
+      <q-card class="textt bg-black">
+        <q-btn color="purple-7" fab icon="close" v-close-popup />
+        <q-timeline class="bg-black q-pa-md" :layout="layout" color="purple">
+          <q-timeline-entry class="text-purple-6 q-pa-md" heading>
+            SEU HQ ESTÁ, MAS... VOCÊ NÃO QUER MAIS?...
           </q-timeline-entry>
 
           <q-timeline-entry
-            title="agora que você colocou Nome/email."
-            subtitle="Prossiga..."
+            title="agora que você colocou Nome/email. Clique abaixo para download de seu HQ"
+            subtitle="OLha só..."
+            class="text-purple-7"
             side="right"
             icon="done"
           >
-          <br>
-            <div class="text-h6">
-             Vá até nossa page do instagram, e verifique se já está seguindo a gente. Clicando no botão abaixo
+               <form
+                action="https://drive.google.com/drive/folders/15K15XOrHQhH9-LZxM7eJw8aQdA29cCbW?usp=sharing"
+                target="_blank"
+              >
+                <q-btn
+                  round
+                  color="purple-7"
+                  type="submit"
+                  class="text-black"
+                  icon="cloud_download"
+                />
+              </form>
+              <br>
+            <div class="text-h6 text-purple-7">
+            !!!! E TEM MAIS !!!! Nos seguindo no Instagram, você ganha o direito de pedir a edição 2 dos HQ's na DM !! O que você tá esperando ? corre lá, é só clicar aqui embaixo
+            </div>
+              <br>
              <form
                 action="https://www.instagram.com/elements.gaming/?"
                 target="_blank"
               >
                 <q-btn
                   round
-                  color="teal-6"
+                  color="purple-7"
                   type="submit"
+                  rounded
+                  class="text-black"
                   icon="alternate_email"
                 />
               </form>
-            </div>
           </q-timeline-entry>
 
           <q-timeline-entry
-            title="Nos Seguindo, agora..."
-            subtitle="Boa sorte gamers"
+            title="Muito bem jovem"
+            subtitle="Você é um ótimo gamer"
             side="left"
+            class="text-purple-6"
           >
-            <div>
-              Curte o post do sorteio e siga as instruções na legenda do post, BORAAA...
+            <div class="text-purple-7">
+              Fique ligado no nosso insta, pois iremos fazer muita coisas juntos ainda.
             </div>
           </q-timeline-entry>
 
@@ -71,8 +89,12 @@
 </template>
 
 <script>
+import { ParticlesBg } from "particles-bg-vue";
 export default {
   name: 'Thx',
+  components: {
+    ParticlesBg
+  },
    data() {
     return {
       icon: false,
@@ -95,8 +117,6 @@ export default {
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
 .containerr {
-  background-image: url("https://cdn.dribbble.com/users/546766/screenshots/5322841/untitled-4.gif");
-  background-position: 50%;
   font-family: "Audiowide", cursive;
 }
 .textt {

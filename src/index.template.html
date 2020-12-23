@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= productName %></title>
+    <title>HQ ELEMENTS</title>
 
     <meta charset="utf-8">
     <meta name="description" content="<%= productDescription %>">
@@ -31,6 +31,10 @@
       />
     </noscript>
   </head>
+  <script>
+    import VueFacebookPixel from 'vue-analytics-facebook-pixel'
+    Vue.use(VueFacebookPixel)
+  </script>
   <body>
     <!-- DO NOT touch the following DIV -->
     <div id="q-app"></div>
