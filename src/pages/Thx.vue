@@ -2,7 +2,7 @@
   <div class="fullscreen textt containerr text-white text-center q-pa-md flex flex-center">
    <particles-bg type="lines" :bg="true" />
     <div>
-      <div class="text-purple-7 large-screen-only" style="font-size: 20vh">
+      <div class="text-purple-7 large-screen-only" style="font-size: 15vh">
         O SÁBIO SABE QUE NÃO SABE.
       </div>
       <div class="small-screen-only text-purple-7" style="font-size: 7vh">
@@ -15,12 +15,14 @@
        É apenas o começo...
       </div>
     </div>
+    <h5 class="q-pa-xl text-purple-7 large-screen-only">leia no celular apontando sua câmera aqui ></h5>
+    <q-img src="https://desafio.elementsgaming.com.br/wp-content/uploads/2020/12/HQ.png" class="large-screen-only"  style="width: 26vh"></q-img>
     <q-dialog class="textt" v-model="card">
       <q-card class="textt bg-black">
         <q-btn color="purple-7" fab icon="close" v-close-popup />
         <q-timeline class="bg-black q-pa-md" :layout="layout" color="purple">
           <q-timeline-entry class="text-purple-6 q-pa-md" heading>
-            SEU HQ ESTÁ, MAS... VOCÊ NÃO QUER MAIS?...
+            SEU HQ ESTÁ PRONTO, MAS... VOCÊ NÃO QUER MAIS?...
           </q-timeline-entry>
 
           <q-timeline-entry
@@ -31,7 +33,7 @@
             icon="done"
           >
                <form
-                action="https://drive.google.com/drive/folders/15K15XOrHQhH9-LZxM7eJw8aQdA29cCbW?usp=sharing"
+                action="https://mega.nz/folder/zyIjHAwa#jWRs7A3ZsJCfCTqdlWHunQ"
                 target="_blank"
               >
                 <q-btn

@@ -1,5 +1,5 @@
 <template>
-  <q-page class=" containerr flex" style="max-width: 1920px">
+  <q-page class=" containerr flex" style="max-width: 2560">
     <h1 class="text-dark large-screen-only text-center " style="padding-left: 15%">
      RESGATE O SEU PRÊMIO 
     </h1>
@@ -82,7 +82,7 @@ export default {
       dense: false,
       name: null,
       email: null,
-      accept: true,
+      accept: false,
       seamless: false
     };
   }
