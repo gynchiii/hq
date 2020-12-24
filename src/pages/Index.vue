@@ -1,5 +1,15 @@
 <template>
   <q-page class=" containerr flex" style="max-width: 2560">
+    <q-spinner-grid
+        color="dark"
+        class="absolute-center small-screen-only"
+        size="25em"
+      />
+      <q-spinner-grid
+        color="dark"
+        class="absolute-center large-screen-only"
+        size="30em"
+      />
     <h1 class="text-dark large-screen-only text-center " style="padding-left: 15%">
      RESGATE O SEU PRÊMIO 
     </h1>
@@ -14,7 +24,7 @@
           filled
           name="user_name"
           type="text"
-          bg-color="grey text-dark"
+          bg-color="brown-4 text-dark"
           v-model="name"
           label="Nome *"
           lazy-rules
@@ -30,7 +40,7 @@
           v-model="email"
           type="email"
           name="user_email"
-          bg-color="grey text-dark"
+          bg-color="brown-4 text-dark"
           label="Email *"
           lazy-rules
           standout
@@ -41,9 +51,9 @@
           </template>
         </q-input>
     <hr>
-         <q-toggle class="text-grey-4 text-h6" v-model="accept" label="Habilito a Elements entrar em contato" />
+         <q-toggle class="text-white text-h7" v-model="accept" label="Habilito entrar em contato comigo via email conforme a lei nª 12965 de 2014" />
 <hr>
-   <q-btn label="Enviar" type="submit" color="white text-black" @click="seamless = true"/>
+   <q-btn push label="Enviar" type="submit" color="brown-3 text-black" @click="seamless = true"/>
       </form>
         <q-dialog v-model="seamless" seamless position="bottom">
       <q-card class="bg-grey-5" style="width: 350px">
